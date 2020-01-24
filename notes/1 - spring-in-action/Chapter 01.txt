@@ -1,0 +1,34 @@
+@SpringBootApplication
+    É a combinação de três anotações:
+    
+    @SpringBootConfiguration
+        Classe de configuração (especialização da classe @Configuration)
+
+    @EnableAutoConfiguration
+        Habilita a configuração automatica
+        Configura qualquer componente que a aplicação necessita
+
+    @ComponentScan
+        Habilita escaneamento de components
+        Cçasses anotadas com @Component, @Controller, @Service, dentre outros, são escaneadas e disponibilizadas de maneira automática
+
+O metodo main, chama a classe SpringApplication.run(MainClass, args)
+
+-- Testes
+    @RunWith(SpringRunner.class)
+        SpringRunner é um alias para SpringJUnit4ClassRunner
+
+    @SpringBootTest
+        Testar com as capacidades do SpringBoot
+        Mesma coisa que chamar Application.run()
+
+    @WebMvcTest
+        Habilita os testes para SpringMVC
+        
+
+@Controller
+    Identifica para Component Scan
+    A escolha é mais descritiva em si
+
+As páginas podem ser colocadas em /templates/xxx.html
+Springboot sobe, por padrão, embarcado num Tomcat, sem necessidade de efetuar o deploy em um servidor
