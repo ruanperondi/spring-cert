@@ -1,0 +1,41 @@
+Antes da versão 4.3 do Spring, a conotação base era utilizar @RequestMapping(method=HttpMethod.GET)
+Porém estas anotações foram quebradas de maneira mais especifica:
+
+@GetMapping
+@PostMapping 
+e assim sucessivamente
+
+
+Por padrão as quando utilizamos Spring MVC, os retornos dos metodos são as páginas encontradas em templates.
+Quando colocamos "redirect:/xxxx" queremos dizer ao navegador fazer o redirect da página
+
+Quando trabalhamos com SpringMVC, passamos um atributo chamado Model para nosso Controller.
+Este, por sua vez, terá toda a camada de exibição na tela, mais precisamente adicionando atributos, assim, como por exemplo, JSP.
+
+@RequestMapping
+    value = "nome do recurso"
+
+Spring suporta a JCP referente a validation, ou seja, Beans validation
+Para funcionar basta anotar os atributos dentro da classe e, posteriormente, anotar os parametros do metodo com @Valid
+    @NotNull
+    @Decimal
+    @CreditCardNumber
+    @Size
+    @Length
+
+Se houver qualquer erro na requisição (Se tratando do modelo), os detalhes serão capturados pela interface Errors.
+Esta interface possui diversos métodos, os mais usados são:
+    getFieldErrors(String)
+    hasFieldErrors(String)
+
+Quando temos @Controlelrs que não processam informação, o ideal é utilizarmos outro modo, e, não "queimar" uma classe inteira para poder lidar com esse recurso
+Podemos extender WebMVCCOnfigurer, anotar a classe com @Configuration
+    O Metodo addViewController(ViewControlelrRegistry v)
+        v.addViewController("/").setName("home")
+
+        O primeiro atributo de addViewController diz o Path que deve ser tratado
+        O segundo atributo é pra onde a requsiição deve ir.
+
+    
+
+
