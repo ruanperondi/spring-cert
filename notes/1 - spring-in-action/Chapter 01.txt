@@ -10,7 +10,7 @@
 
     @ComponentScan
         Habilita escaneamento de components
-        Cçasses anotadas com @Component, @Controller, @Service, dentre outros, são escaneadas e disponibilizadas de maneira automática
+        Classes anotadas com @Component, @Controller, @Service, dentre outros, são escaneadas e disponibilizadas de maneira automática
 
 O metodo main, chama a classe SpringApplication.run(MainClass, args)
 
