@@ -1,0 +1,5 @@
+JDBCTemplate
+    Cria as conexões e lida de maneira abstrata com JDBCs, não tratando situações como exception, fechamento de conexoes e resultset, por exemplo
+
+    template.query("sql", mapRow) -> retorna uma lista de um valor
+    template.queryForObject("sql",mapRow, args ... atributos ) retorna um objeto em si
